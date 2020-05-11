@@ -1,25 +1,17 @@
-# Capstone Template for London Campus  
 
-This repository is a boilerplate template for Flatiron School captstone projects.
-The idea here is that you can take this repository and use it as jumping off point to structure your project so you don't have to re-invent the wheel in terms of the organization of the project.
-If you don't like how this repo is organised, you don't have to stick to it, feel free to change it.
-That said, this format here is a tried and tested format that should work for you! 
+# Twitter sentiment analysis to detect hate speech
 
-The way to use this template is to just copy and paste the file structure (don't fork it, you don't want to be just manipulating a template!) to your new initialized repo and fill in things where they should go.
-We also suggest if you need direction to check out the `Project Checklist` markdown file  that is found in this repository as well as the [Capstone Questions](https://docs.google.com/document/d/11Otz1b2oRT3Xn0TK16X1o44hphGP4aBqdpARv0GWXBA/edit?usp=sharing) document for help building and assessing this project. 
-Both this boiler plate and the checklist were built simultaneously, so feel free to use them in tandem. 
+Different tweets from two sources were grouped in order to build a larger collection of roughly 50000 tweets contaning positive, neutral and offensive language. Offensive language is also divided into simple offensive language and hate speech.
+Hate speech's definition is taken from Cambridge Dictionary: "public speech that expresses hate or encourages violence towards a person or group based on something such as race, religion, sex, or sexual orientation". The main goal of this project is to build a model capable of identfying and differianting hate speech on Twitter. In the final section winning model runs across fresh tweets collected daily from Twitter API in the UK, showing percentage of overall tweets labelled as positive, neutral, offensive language or hate speech.
 
-> Eventually you will delete everything above this line. This is just here to introduce the boilerplate. We also suggest deleting any other indentations like this. There are more there to get you thinking about the 'point' of the section. 
-# The Title of Your Project Goes Here 
+Promptly identifying hate speech and overall offensive language is a very important concern for all major social media platforms. According to the public order act from 1986, any communication which is threatening or abusive, and is intended to harass, alarm, or distress someone is forbidden. The penalties for hate speech include fines, imprisonment, or both. It is very important to ensure social platform media only act as a medium of spreading free speech and constructive ideas. One of the main challenges when it comes to hate speech detection is also to differentiate it from any other type of offensive language.
 
-One sentence summary goes here saying what you did.
-A second sentence goes here says why it matters.
-A last sentence links to any productionized web dashboard here.
+The final dashboard showcasing percentage of language tone on Twitter can be found here on Heroku. Fresh tweets are pulled every 24 hours.
 
-You can also link to 
-* [Your Email]()
-* [Your Linked In]()
-* [Your Twitter?]()
+Contacts:
+* [e-mail]()
+* [Linkedin]()
+
 
 > We suggest that people follow a "Facebook Page" approach to writing up their README. This means that the most important information is at the top (your name, point of project, contact info) and then as you go down the document you get less and less relevant information. Remember that you are NOT writing a detective story and need to find a way to present as much information as quickly as possible to the person that will be looking at this for 45 seconds tops. Of course others might look for longer, but the UX/UI of your REAMDE should be done with the 'github skimmer' in mind.
 
