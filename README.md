@@ -1,6 +1,6 @@
 
 # Twitter sentiment analysis to detect hate speech
-
+(figures/cover)
 Different tweets from two sources were grouped in order to build a larger collection of roughly 50000 tweets contaning positive, neutral and offensive language. Offensive language is also divided into simple offensive language and hate speech.
 Hate speech's definition is taken from Cambridge Dictionary: "public speech that expresses hate or encourages violence towards a person or group based on something such as race, religion, sex, or sexual orientation". The main goal of this project is to build a model capable of identfying and differianting hate speech on Twitter. In the final section winning model runs across fresh tweets collected daily from Twitter API in the UK, showing percentage of overall tweets labelled as positive, neutral, offensive language or hate speech.
 
@@ -9,8 +9,8 @@ Promptly identifying hate speech and overall offensive language is a very import
 The final dashboard showcasing percentage of language tone on Twitter can be found here on Heroku. Fresh tweets are pulled every 24 hours.
 
 Contacts:
-* [e-mail]()
-* [Linkedin]()
+* [e-mail](matteotortella4@gmail.com)
+* [Linkedin](https://www.linkedin.com/in/matteo-tortella-0a4274130/)
 
 
 > We suggest that people follow a "Facebook Page" approach to writing up their README. This means that the most important information is at the top (your name, point of project, contact info) and then as you go down the document you get less and less relevant information. Remember that you are NOT writing a detective story and need to find a way to present as much information as quickly as possible to the person that will be looking at this for 45 seconds tops. Of course others might look for longer, but the UX/UI of your REAMDE should be done with the 'github skimmer' in mind.
