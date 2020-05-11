@@ -11,19 +11,19 @@ You can go out of order if you'd like, but it might make sense to try to keep it
 Note that you can make both complete and non-complete checkmarks within markdown like the example here.
 
 * [X] Read the above paragraph
-* [ ] Copy this document to your github repo project
+* [X] Copy this document to your github repo project
 
 ## Setting Things Up 
 
-* [ ] Start a new github repo page for your capstone
-* [ ] Make sure the project has a clear name  
-* [ ] Initialize with a README 
-* [ ] Set project as public, not private 
+* [X] Start a new github repo page for your capstone
+* [X] Make sure the project has a clear name  
+* [X] Initialize with a README 
+* [X] Set project as public, not private 
 * [ ] Share your github link with the instructor in charge of your capstone  
-* [ ] Copy this checklist into your new project repo   
-* [ ] Check off some of these boxes you have completed like the example above 
-* [ ] Copy the Boilerplate README to your new repo
-* [ ] Push this repo with your first commit message!  
+* [X] Copy this checklist into your new project repo   
+* [X] Check off some of these boxes you have completed like the example above 
+* [X] Copy the Boilerplate README to your new repo
+* [X] Push this repo with your first commit message!  
 
 ## Setting Your Large Goals 
 
