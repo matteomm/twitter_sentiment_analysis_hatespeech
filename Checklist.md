@@ -15,15 +15,15 @@ Note that you can make both complete and non-complete checkmarks within markdown
 
 ## Setting Things Up 
 
-* [ X] Start a new github repo page for your capstone
-* [X ] Make sure the project has a clear name  
-* [ X] Initialize with a README 
-* [X ] Set project as public, not private 
+* [X] Start a new github repo page for your capstone
+* [X] Make sure the project has a clear name  
+* [X] Initialize with a README 
+* [X] Set project as public, not private 
 * [ ] Share your github link with the instructor in charge of your capstone  
-* [ X] Copy this checklist into your new project repo   
-* [X ] Check off some of these boxes you have completed like the example above 
-* [X ] Copy the Boilerplate README to your new repo
-* [ X] Push this repo with your first commit message!  
+* [X] Copy this checklist into your new project repo   
+* [X] Check off some of these boxes you have completed like the example above 
+* [X] Copy the Boilerplate README to your new repo
+* [X] Push this repo with your first commit message!  
 
 ## Setting Your Large Goals 
 
