@@ -1,6 +1,10 @@
 
 # Twitter sentiment analysis to detect hate speech
-![figure](figures/cover.jpg)
+<p align="center">
+  <img src="https://github.com/matteomm/twitter_sentiment_analysis_hatespeech/blob/master/figures/cover.jpg" width=750>
+</p>
+
+
 Different tweets from two sources were grouped in order to build a larger collection of roughly 50000 tweets contaning positive, neutral and offensive language. Offensive language is also divided into simple offensive language and hate speech.
 Hate speech's definition is taken from Cambridge Dictionary: "public speech that expresses hate or encourages violence towards a person or group based on something such as race, religion, sex, or sexual orientation". The main goal of this project is to build a model capable of identfying and differianting hate speech on Twitter. In the final section winning model runs across fresh tweets collected daily from Twitter API in the UK, showing percentage of overall tweets labelled as positive, neutral, offensive language or hate speech.
 
