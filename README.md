@@ -17,7 +17,7 @@ Contacts:
 * [Linkedin](https://www.linkedin.com/in/matteo-tortella-0a4274130/)
 
 
-> We suggest that people follow a "Facebook Page" approach to writing up their README. This means that the most important information is at the top (your name, point of project, contact info) and then as you go down the document you get less and less relevant information. Remember that you are NOT writing a detective story and need to find a way to present as much information as quickly as possible to the person that will be looking at this for 45 seconds tops. Of course others might look for longer, but the UX/UI of your REAMDE should be done with the 'github skimmer' in mind.
+
 
 ### Executive Summary
 
