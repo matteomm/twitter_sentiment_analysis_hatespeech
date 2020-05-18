@@ -52,17 +52,16 @@ The goal of this project was to create a `regression/classification` model that 
     * [ Modelling ](#modelling)
     * [ Twitter API and MySQL Storage ](#twitterapi)
     * [ Model Evaluation and Dashboard ](#insights)
-  
-
+ 4. [ Limitations and Future Work ](#futurework)
 
 <a name="file_description"></a>
 ## File Descriptions
-- .ipynb_checkpoints: different notebooks version going from preprocessing to modelling
--  notebooks: contains all the different notebooks used throughout the project from data cleaning to final app
--  data: contains dataset used for the analysis both processed and raw
--  references: links to the source material referenced in the notebook
--  images: jpg images taken from the jupyter notebook
--  twitter_presentation: pdf format of a presentation with key insights for non-tecnhical stakeholders
+> 1.ipynb_checkpoints: different notebooks version going from preprocessing to modelling
+> 2. notebooks: contains all the different notebooks used throughout the project from data cleaning to final app
+> 3.data: contains dataset used for the analysis both processed and raw
+> 4.references: links to the source material referenced in the notebook
+> 5.images: jpg images taken from the jupyter notebook
+> 6.twitter_presentation: pdf format of a presentation with key insights for non-tecnhical stakeholders
 
 <a name="technologies_used"></a>
 ## Technologies used
@@ -85,7 +84,7 @@ ML classifiers and the wealth of data available on these platforms offer a valid
 
 In this project, a series of classifiers such as Logistic Regression, Decision Trees and CNN were trained on 40000 thousand tweets human labelled as offensive and not offensive. The 40000 tweets were assembled by combining two different sets. One of them was originally taken from an [Analytics Vidhaya](https://datahack.analyticsvidhya.com/contest/practice-problem-twitter-sentiment-analysis/) competition while the second dataset was a collection of 20000 offensive tweets found on [Github](https://github.com/t-davidson/hate-speech-and-offensive-language/tree/master/data).
 
-After the initial preprocessing, the first section is focused on training a classifier at recognising hate speech. Our final winning model was Logistic Regression with a final accuracy score of xyz.
+After the initial preprocessing, the first section is focused on training a classifier at recognising hate speech. The final winning model was Logistic Regression with a final accuracy score of xyz.
 
 The second section concentrates more on using the refined model to make predictions on unseen Tweets freshly taken from the Twitter API and showcasing out findings on a web app deployed on Heroku.
 
@@ -122,3 +121,43 @@ Are aggressive people less verbose? Add final graph
 
 <a name="modelling"></a>
 ## Modelling
+
+The only predictor I used for the modelling was only the text itself. The lemmatized and refined version of our text was vectorized with the tf-idf method. Tf-idf was preferred over Bag-of-words as rarity of words is quite important in this instance.
+
+The tf-idf matrix was used across all models except for CNN (which only takes as input a tokekized sequence of words) and Naives Bayes where I also tried to use a Bow framework just to see whether performance would take a hit.
+
+Decision Tree comes also quite handy at describing how each word is important at predicting outcomes. 
+Below we can see the top 10 most important features (or words):
+
+Insert Graph:
+
+Also, find below a performance snapshot of all our models.
+
+Insert Table:
+
+
+Although Random Forest had the highest accuracy in the validation set, Logistic Regression was preferred for higher interpretability. The winning model and the tf-idf were both pickled for later use.
+
+
+<a name="twitterapi"></a>
+## Twitter API and MySQL Storage 
+
+After requesting access to the Twitter Developer portal, fresh tweets have been collected periodically on a local MySQL database which has been created only to accomodate the incoming stream of tweets. The python library Tweepy was used to create a connection with the Twitter API. The only information we are storing on the SQL database from the raw JSON stream are: 
+
+> 1. Twitter ID
+> 2. Time of Tweet
+> 3. Twitter Text
+
+All text had to be stripped of emojis in order to be stored in the database.
+The stream listener of Tweepy can collect information based on specific topics and other filters such as language.
+In this case, all words with the ashtag 'coronavirus' were tracked to ensure a high volume of tweets streaming. At the same time, only the english language was selected for convenience.
+
+<a name="insights"></a>
+## Model Evalutation and Dashboard
+Lastly, a basic pipeline was engineered by pulling batches of newly streamed Tweets on a separate notebook where exactly the same preprocessing cleaning was applied. In this section, the final model and the tf-idf pickled objects are recalled. The only fitted tf-idf object is transformed onto the new tweets so that a matrix with each time exactly the same amount of columns (9000) is generated. Out of words vocabulary are just dropped in this case while the rest is retained by the matrix.
+
+Subsequently, the predict_proba function is applied to the vectorized matrix and only values above .8 are filtered in the hope of collecting only tweets that the model deems as very offensive. As a last step, fluctuations over time of offensive tweets and most recurring words are plotted. This figure is then uploaded onto Heroku through Streamlit. The final app can be found here.
+
+<a name="futurework"></a>
+## Model Evalutation and Dashboard
+Although the final model performance is very good even on the test results of our dataset, one of the main limitations of this project is measuring the performance of the model on fresh tweets. Pragmatically, it is possible to just look at some of the tweets labelled as negative and subjectively consider them as offensive or not. This very last point raises another important issue in this framework which is the one related to the inherent bias of human people manually labelling tweets. The judgment used to label the initial ground truths is also fallacious as what is offensive for some people might not be offensive for others. Out of words vocabulary is probably one of the main drawbacks of this model. The algorithm does not deal well with sentences that have loads of words not contained in our initial 9000 thousand word long vocabulary. Recursive Neural Network would probably be the best alternative when it comes to deal with out of vocabulary words. 
