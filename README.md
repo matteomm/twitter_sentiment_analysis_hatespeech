@@ -109,10 +109,16 @@ The EDA section provided some useful insights into the very fabric of the words 
 Also, distributions of lengths between positive and negative tweets was also analysed and, as shown in the graph below, negative tweets seem to be on average shorter than their positive counterpart. 1 represents negative tweets while 0 positive ones. It is possible to see that most of the negative tweets are concentrated on the left side of the graph corresponding to shorter lengths. A simple t-test confirmed that the mean difference is significant with p-value smaller than 0.001.
 
 <p align="center">
-  <img src="https://github.com/matteomm/twitter_sentiment_analysis_hatespeech/blob/master/figures/word_clouds.png" width=750>
+  <img src="https://github.com/matteomm/twitter_sentiment_analysis_hatespeech/blob/master/figures/length.png" width=750>
 </p>
 
 In the last section, the relationship between number of handles and aggressiveness was measured by plotting again number of positive/negative against overall number of handles. The vast majority of the tweets had somewhere in between 0 and 3 handles with a stark difference between 0 and 1 handles tweets, the latter having a significantly higher proportion of offensive tweets along with the 2 and 3 class. This could be explained by people directed their rant at someone through the use of handles.
 
+<p align="center">
+  <img src="https://github.com/matteomm/twitter_sentiment_analysis_hatespeech/blob/master/figures/handles.png" width=750>
+</p>
 
+Are aggressive people less verbose? Add final graph
 
+<a name="modelling"></a>
+## Modelling
