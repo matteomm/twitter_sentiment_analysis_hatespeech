@@ -83,7 +83,7 @@ The goal of this project was to create a `regression/classification` model that 
 Cyber bullying and aggressive language on social plaforms are one of the plagues of our modern time. Freedom of speech online can easily derail into offensive, unjustified and unconstuctive criticism towards sexual, political and religious beliefs.
 ML classifiers and the wealth of data available on these platforms offer a valid solution in order to mitigate this issue.
 
-In this project, a series of classifiers such as Logistic Regression, Decision Trees and CNN were trained on 40000 thousand tweets human labelled as offensive and not offensive. The 40000 tweets were assembled by combining two different sets. One of them was originally taken from an * [Analytics Vidhaya competition](https://datahack.analyticsvidhya.com/contest/practice-problem-twitter-sentiment-analysis/) while the second dataset was a collection of 20000 offensive tweets found on * [Github](https://github.com/t-davidson/hate-speech-and-offensive-language/tree/master/data).
+In this project, a series of classifiers such as Logistic Regression, Decision Trees and CNN were trained on 40000 thousand tweets human labelled as offensive and not offensive. The 40000 tweets were assembled by combining two different sets. One of them was originally taken from an [Analytics Vidhaya](https://datahack.analyticsvidhya.com/contest/practice-problem-twitter-sentiment-analysis/) competition while the second dataset was a collection of 20000 offensive tweets found on [Github](https://github.com/t-davidson/hate-speech-and-offensive-language/tree/master/data).
 
 After the initial preprocessing, the first section is focused on training a classifier at recognising hate speech. Our final winning model was Logistic Regression with a final accuracy score of xyz.
 
@@ -99,3 +99,9 @@ Cleaning was performed with a combination regex syntax to get rid of re-tweets, 
 
 <a name="eda"></a>
 ## Exploratory Data Analysis
+
+The EDA section provided some useful insights into the very fabric of the words used in these tweets. Wordclouds were created to showcase the most common 1,2 and 3-grams present in the text. Attaching below a comparison between positive and negative lexicon, larger words correspond to higher frequency.
+
+<p align="center">
+  <img src="https://github.com/matteomm/twitter_sentiment_analysis_hatespeech/blob/master/figures/word_clouds.png" width=750>
+</p>
