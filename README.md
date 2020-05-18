@@ -95,7 +95,7 @@ The second section concentrates more on using the refined model to make predicti
 
 As mentioned above the initial dataset was designed through the combination of two distinct sets from the web. The raw initial dataset was designed to have no class imbalance as we have selected exactly 21421 positive and 20610 negative tweets. Given the balanced nature of the training set, this project will mainly look at accuracy and f1 score as success metrics. 
 
-Cleaning was performed with a combination regex syntax to get rid of re-tweets, handles, special characters. Duplicate tweets were also removed and lemmatization with part of speech was also applied to all tweets. The last stage involved removing stopwords and also words shorter than three characters as they do not usually carry very valuable meaning. However, stopwords such as 'but' and 'not' were kept for neural networks sequencing. We created two additional columns, 'tweet_length' and 'handle_count' to investigate whether these two factors have any impact on positive/negative language.
+Cleaning was performed with a some iterations of regex syntax to get rid of re-tweets, handles and special characters. Duplicate tweets were also removed and lemmatization with part of speech was also applied to all tweets. The last stage involved removing stopwords and also words shorter than three characters as they do not usually carry very valuable meaning. However, stopwords such as 'but' and 'not' were kept for neural networks sequencing. We created two additional columns, 'tweet_length' and 'handle_count' to investigate whether these two factors have any impact on positive/negative language.
 
 <a name="eda"></a>
 ## Exploratory Data Analysis
@@ -105,3 +105,14 @@ The EDA section provided some useful insights into the very fabric of the words 
 <p align="center">
   <img src="https://github.com/matteomm/twitter_sentiment_analysis_hatespeech/blob/master/figures/word_clouds.png" width=750>
 </p>
+
+Also, distributions of lengths between positive and negative tweets was also analysed and, as shown in the graph below, negative tweets seem to be on average shorter than their positive counterpart. 1 represents negative tweets while 0 positive ones. It is possible to see that most of the negative tweets are concentrated on the left side of the graph corresponding to shorter lengths. A simple t-test confirmed that the mean difference is significant with p-value smaller than 0.001.
+
+<p align="center">
+  <img src="https://github.com/matteomm/twitter_sentiment_analysis_hatespeech/blob/master/figures/word_clouds.png" width=750>
+</p>
+
+In the last section, the relationship between number of handles and aggressiveness was measured by plotting again number of positive/negative against overall number of handles. The vast majority of the tweets had somewhere in between 0 and 3 handles with a stark difference between 0 and 1 handles tweets, the latter having a significantly higher proportion of offensive tweets along with the 2 and 3 class. This could be explained by people directed their rant at someone through the use of handles.
+
+
+
