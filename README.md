@@ -31,12 +31,17 @@ Contacts:
 
 <a name="file_description"></a>
 ## File Descriptions
-> 1.ipynb_checkpoints: different notebooks version going from preprocessing to modelling
-> 2. notebooks: contains all the different notebooks used throughout the project from data cleaning to final app
-> 3.data: contains dataset used for the analysis both processed and raw
-> 4.references: links to the source material referenced in the notebook
-> 5.images: jpg images taken from the jupyter notebook
-> 6.twitter_presentation: pdf format of a presentation with key insights for non-tecnhical stakeholders
+> ipynb_checkpoints: different notebooks version going from preprocessing to modelling
+
+> notebooks: contains all the different notebooks used throughout the project from data cleaning to final app
+
+> data: contains dataset used for the analysis both processed and raw
+
+> references: links to the source material referenced in the notebook
+
+> figures: jpg images taken from the jupyter notebook 
+
+> twitter_presentation: pdf format of a presentation with key insights for non-tecnhical stakeholders
 
 <a name="technologies_used"></a>
 ## Technologies used
