@@ -64,7 +64,7 @@ ML classifiers and the wealth of data available on these platforms offer a valid
 
 In this project, a series of classifiers such as Logistic Regression, Decision Trees and CNN were trained on 40000 thousand tweets human labelled as offensive and not offensive. The 40000 tweets were assembled by combining two different sets. One of them was originally taken from an [Analytics Vidhaya](https://datahack.analyticsvidhya.com/contest/practice-problem-twitter-sentiment-analysis/) competition while the second dataset was a collection of 20000 offensive tweets found on [Github](https://github.com/t-davidson/hate-speech-and-offensive-language/tree/master/data).
 
-After the initial preprocessing, the first section is focused on training a classifier at recognising hate speech. The final winning model was Logistic Regression with a final accuracy score of xyz.
+After the initial preprocessing, the first section is focused on training a classifier at recognising hate speech. The final winning model was Logistic Regression with a final accuracy score of **98.3%** on validation set.
 
 The second section concentrates more on using the refined model to make predictions on unseen Tweets freshly taken from the Twitter API and showcasing out findings on a web app deployed on Heroku.
 
@@ -116,7 +116,7 @@ Also, find below a performance snapshot of all our models.
 Insert Table:
 
 
-Although Random Forest had the highest accuracy in the validation set, Logistic Regression was preferred for higher interpretability. The winning model and the tf-idf were both pickled for later use.
+Although the convolutional neural network had a reasonably good accuracy score in the validation set, Logistic Regression was still the best and it was also preferred for higher interpretability with final accuracy score of 98.3%. The winning model and the tf-idf were both pickled for later use.
 
 
 <a name="twitterapi"></a>
