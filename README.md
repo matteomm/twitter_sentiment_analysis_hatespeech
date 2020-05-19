@@ -40,7 +40,8 @@ Contacts:
 > references: links to the source material referenced in the notebook
 
 > figures: jpg images taken from the jupyter notebook 
-  * functions: folder with all the custom functions created 
+
+> functions: folder with all custom functions created and called onto notebooks 
 
 > twitter_presentation: pdf format of a presentation with key insights for non-tecnhical stakeholders
 
