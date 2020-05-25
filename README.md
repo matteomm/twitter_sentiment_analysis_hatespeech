@@ -66,7 +66,7 @@ ML classifiers and the wealth of data available on these platforms offer a valid
 
 In this project, a series of classifiers such as Logistic Regression, Decision Trees and CNN were trained on 40000 thousand tweets human labelled as offensive and not offensive. The 40000 tweets were assembled by combining two different sets. One of them was originally taken from an [Analytics Vidhaya](https://datahack.analyticsvidhya.com/contest/practice-problem-twitter-sentiment-analysis/) competition while the second dataset was a collection of 20000 offensive tweets found on [Github](https://github.com/t-davidson/hate-speech-and-offensive-language/tree/master/data).
 
-After the initial preprocessing, the first section is focused on training a classifier at recognising hate speech. The final winning model was Logistic Regression with a final accuracy score of **98.3%** on validation set.
+After the initial preprocessing, the first section is focused on training a classifier at recognising hate speech. The final winning model was Logistic Regression with a final f-1 score of **98.2%** on validation set.
 
 The second section concentrates more on using the refined model to make predictions on unseen Tweets freshly taken from the Twitter API and showcasing out findings on a web app deployed on Heroku.
 
@@ -111,23 +111,25 @@ The tf-idf matrix was used across all models except for CNN (which only takes as
 CNN performance was not added to the graph below, however it was very low with accuracy score just above 50%.
 More work is needed on the Neural Network section where I could potentially look to implement RNN on top of the low performing CNN already in place.
 
-All models were tweaked and optimised with GridSearch CV. As mentioned earlier on, the final best performing model was a Logistic Regression with a **99.5% f-1 score on the validation set**. Attaching below a snapshot of all models and iterations ran on the notebook across training and validation. 
+All models were tweaked and optimised with GridSearch CV. As mentioned earlier on, the final best performing model was a Logistic Regression with a **98.2% f-1 score on the validation set**. Attaching below a snapshot of all models and iterations ran on the notebook across training and validation. 
 
 <p align="center">
   <img src="https://github.com/matteomm/twitter_sentiment_analysis_hatespeech/blob/master/figures/models.png" width=750>
 </p>
 
-Decision Tree comes also quite handy at describing how each word is important at predicting outcomes. 
-Below we can see the top 10 most important features (or words):
+Logistic Regression comes also quite handy at describing how each word is important at predicting outcomes. 
+Below we can see the top 20 most important word coefficients in order to deem something as offensive:
 
-Insert Graph:
-
-Also, find below a performance snapshot of all our models.
-
-Insert Table:
+<p align="center">
+  <img src="https://github.com/matteomm/twitter_sentiment_analysis_hatespeech/blob/master/figures/logistic_coefficients.png" width=750>
+</p>
 
 
-Although the convolutional neural network had a reasonably good accuracy score in the validation set, Logistic Regression was still the best and it was also preferred for higher interpretability with final accuracy score of 98.3%. The winning model and the tf-idf were both pickled for later use.
+Although Decision Tree and Naive Bayes had reasonably good accuracy and f-1 scores score in the validation set, Logistic Regression was still the best and it was also preferred for higher interpretability with **final accuracy score of 98.7% on the test set**. The winning model and the tf-idf were both pickled for later use. Please find below stats for the test set.
+
+<p align="center">
+  <img src="https://github.com/matteomm/twitter_sentiment_analysis_hatespeech/blob/master/figures/winning_model_test.png" width=750>
+</p>
 
 
 <a name="twitterapi"></a>
