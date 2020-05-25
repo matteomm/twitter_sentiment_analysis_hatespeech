@@ -166,7 +166,27 @@ def plot_word_cloud(df, top_n):
 
 
 # In[35]:
-
+def calculate_performance_1(model , data, target, name):
+    
+    """ Creates a mini dataframe with all info on the model performance"""
+    
+    predictions = model.predict(data)
+    model_prob = model.predict_proba(data)[:,1]
+    
+    f1 = f1_score(target, predictions)
+    accuracy = accuracy_score(target, predictions)
+    roc_score = roc_auc_score(target, model_prob)
+    precision = precision_score(target, predictions)
+    nameit = str(name)
+    score = pd.DataFrame()
+    
+    score['model'] = pd.Series(nameit) 
+    score['f1'] = pd.Series(f1)
+    score['accuracy'] = pd.Series(accuracy)
+    score['roc_score'] = pd.Series(roc_score)
+    score['precision'] = pd.Series(precision)
+    
+    return score
 
 def calculate_performance(model , data, target):
     
@@ -179,9 +199,10 @@ def calculate_performance(model , data, target):
     accuracy = accuracy_score(target, predictions)
     roc_score = roc_auc_score(target, model_prob)
     precision = precision_score(target, predictions)
-    
+    nameit = str(name)
     score = pd.DataFrame()
     
+    score['model'] = pd.Series(nameit) 
     score['f1'] = pd.Series(f1)
     score['accuracy'] = pd.Series(accuracy)
     score['roc_score'] = pd.Series(roc_score)
@@ -219,7 +240,7 @@ def plot_roc_curve(model, train, validation, y_train, y_val):
     ax3.lines[2].set_color("black")
     ax3.lines[2].set_linewidth(2)
 
-    plt.title('Naive Bayes ROC Curve', fontsize=20)
+    plt.title(f'{str(model)}', fontsize=20)
     plt.xlabel('FPR', fontsize=16)
     plt.ylabel('TPR', fontsize=16)
     plt.xlim(0,1)
@@ -230,7 +251,41 @@ def plot_roc_curve(model, train, validation, y_train, y_val):
     plt.legend(loc=4, fontsize=17)
     plt.show();
     
+def plot_roc_curve_1(model, train, validation, y_train, y_val, title):
+    
+    """Plots the roc curves of two different sets"""
+    
+    base_pred_train = model.predict_proba(train)[:,1]
+    base_fpr_train, base_tpr_train, base_thresh_train = roc_curve(y_train, base_pred_train)
 
+    base_pred_validation = model.predict_proba(validation)[:,1]
+    base_fpr_validation, base_tpr_validation, base_thresh_validation = roc_curve(y_val, base_pred_validation)
+    
+    plt.style.use('seaborn')
+    plt.figure(figsize=(12,7))
+    ax1 = sns.lineplot(base_fpr_train, base_tpr_train, label='train',)
+    ax1.lines[0].set_color("orange")
+    ax1.lines[0].set_linewidth(2)
+
+    ax2 = sns.lineplot(base_fpr_validation, base_tpr_validation, label='validaton')
+    ax2.lines[1].set_color("yellow")
+    ax2.lines[1].set_linewidth(2)
+
+    ax3 = sns.lineplot([0,1], [0,1], label='baseline')
+    ax3.lines[2].set_linestyle("--")
+    ax3.lines[2].set_color("black")
+    ax3.lines[2].set_linewidth(2)
+
+    plt.title(f'{title} roc_score', fontsize=20)
+    plt.xlabel('FPR', fontsize=16)
+    plt.ylabel('TPR', fontsize=16)
+    plt.xlim(0,1)
+    plt.ylim(0,1)
+    plt.text(x=0.8, y=0.8, s="50-50 guess", fontsize=14,
+    bbox=dict(facecolor='whitesmoke', boxstyle="round, pad=0.4"))
+
+    plt.legend(loc=4, fontsize=17)
+    plt.show();
 
 # In[37]:
 
