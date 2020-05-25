@@ -104,9 +104,18 @@ Are aggressive people less verbose? Add final graph
 <a name="modelling"></a>
 ## Modelling
 
-The only predictor I used for the modelling was only the text itself. The lemmatized and refined version of our text was vectorized with the tf-idf method. Tf-idf was preferred over Bag-of-words as rarity of words is quite important in this instance.
+The only predictor I used for the modelling was only the text itself. The lemmatized and refined version of our text was vectorized with the tf-idf method. Tf-idf was preferred over Bag-of-words as words rarity is quite relevant in this instance.
 
 The tf-idf matrix was used across all models except for CNN (which only takes as input a tokekized sequence of words) and Naives Bayes where I also tried to use a Bow framework just to see whether performance would take a hit.
+
+CNN performance was not added to the graph below, however it was very low with accuracy score just above 50%.
+More work is needed on the Neural Network section where I could potentially look to implement RNN on top of the low performing CNN already in place.
+
+All models were tweaked and optimised with GridSearch CV. As mentioned earlier on, the final best performing model was a Logistic Regression with a **99.5% f-1 score on the validation set**. Attaching below a snapshot of all models and iterations ran on the notebook across training and validation. 
+
+<p align="center">
+  <img src="https://github.com/matteomm/twitter_sentiment_analysis_hatespeech/blob/master/figures/models.png" width=750>
+</p>
 
 Decision Tree comes also quite handy at describing how each word is important at predicting outcomes. 
 Below we can see the top 10 most important features (or words):
