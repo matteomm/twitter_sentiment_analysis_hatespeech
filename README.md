@@ -58,6 +58,7 @@ Contacts:
 - Matplotlib
 - Streamlit
 - Heroku
+- Papermill
 
 <a name="executive_summary"></a>
 ## Executive Summary
@@ -148,9 +149,21 @@ In this case, all words with the ashtag 'coronavirus' were tracked to ensure a h
 
 <a name="insights"></a>
 ## Model Evalutation and Dashboard
-Lastly, a basic pipeline was engineered by pulling batches of newly streamed Tweets on a separate notebook where exactly the same preprocessing cleaning was applied. In this section, the final model and the tf-idf pickled objects are recalled. The only fitted tf-idf object is transformed onto the new tweets so that a matrix with each time exactly the same amount of columns (9000) is generated. Out of words vocabulary are just dropped in this case while the rest is retained by the matrix.
+Lastly, a basic pipeline was engineered by pulling batches of newly streamed Tweets on a separate notebook where exactly the same preprocessing cleaning was applied. Attaching below a graph describing the overall structure of the pipeline in place:
 
-Subsequently, the predict_proba function is applied to the vectorized matrix and only values above .8 are filtered in the hope of collecting only tweets that the model deems as very offensive. As a last step, fluctuations over time of offensive tweets and most recurring words are plotted. This figure is then uploaded onto Heroku through Streamlit. The final app can be found here.
+<p align="center">
+  <img src="https://github.com/matteomm/twitter_sentiment_analysis_hatespeech/blob/master/figures/data_pipeline.png" width=750>
+</p>
+
+As you can see, the creation and storing of fresh tweets is done on the current github repo (see notebooks 'twitter_app_v2'). 
+
+Also, the final model and the tf-idf pickled objects are recalled in the 'fresh_tweets_to_df.ipynb' also availabe in this repo in the section notebooks. The fitted tf-idf object is transformed onto the new tweets so that a matrix with each time exactly the same amount of columns (9000) is generated. Out of words vocabulary are just dropped in this case while the rest is retained by the matrix.
+
+Subsequently, the predict_proba function is applied to the vectorized matrix and only values above .9 are filtered in the hope of collecting only tweets that the model deems as very offensive. 
+
+As a last step, a new df with the predictions is sent to another repo which can be found [here]. Fluctuations over time of offensive tweets and most recurring words are plotted. This figure is then uploaded onto Heroku through Streamlit. The final app can be found [here](https://dashboard.heroku.com/apps/shrouded-sands-52273/resources).
+
+*The entire process is automated through a series of cron commands which execute these notebooks at regular intervals of 4 hours by using papermill and nbconvert.*
 
 <a name="futurework"></a>
 ## Limitations and Future Work
