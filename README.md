@@ -1,5 +1,6 @@
 
 # Twitter sentiment analysis to detect hate speech
+## *Viewers are warned that this page contains content that is offensive and objectionale*
 <p align="center">
   <img src="https://github.com/matteomm/twitter_sentiment_analysis_hatespeech/blob/master/figures/cover.jpg" width=750>
 </p>
