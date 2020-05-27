@@ -161,9 +161,9 @@ Also, the final model and the tf-idf pickled objects are recalled in the 'fresh_
 
 Subsequently, the predict_proba function is applied to the vectorized matrix and only values above .9 are filtered in the hope of collecting only tweets that the model deems as very offensive. 
 
-As a last step, a new df with the predictions is sent to another repo which can be found [here]. Fluctuations over time of offensive tweets and most recurring words are plotted. This figure is then uploaded onto Heroku through Streamlit. The final app can be found [here](https://shrouded-sands-52273.herokuapp.com).
+As a last step, a new dataframe with the predictions is sent to another repo which can be found [here] where all the Heroku deploymentis sorted including the creation of a procfile and requirements.txt obejcts. Number of tweet mention for the topic over time, most recurring words and ratio of negative and neutral/positive tweets are displayed in the final app. Also, a list of the offensive tweets can be found on the app. These figures are then uploaded onto Heroku through Streamlit. The final app can be found [here](https://shrouded-sands-52273.herokuapp.com).
 
-*The entire process is automated through a series of cron commands which execute these notebooks at regular intervals of 4 hours by using papermill and nbconvert.*
+*The entire process is automated through a series of cron commands which execute these notebooks at regular intervals of 4 hours by using papermill and nbconvert to trigger and convert notebooks.*
 
 <a name="futurework"></a>
 ## Limitations and Future Work
